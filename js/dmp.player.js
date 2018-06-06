@@ -297,7 +297,7 @@ $(document).keydown(function(e) {
   // Right arrow key.
   if (e.keyCode == 39) {
       if(ga) {
-          ga('send', 'event', 'player', 'next_key');
+          ga('send', 'event', 'player', 'next_key'); //'ga' means Google Analytics
       }
     dmp.player.playNext(e);
     return false;
@@ -310,4 +310,17 @@ $(document).keydown(function(e) {
     dmp.player.playPrevious(e);
     return false;
   }
+
+  if(e.keyCode == 122) {
+    //Z pressed
+    //TODO: Write a 'rewind' method of the dmp.player class that rewinds the current track
+    return false;
+  }
+
+  if(e.keyCode == 120) {
+      //X pressed
+      //TODO: Write a 'forward' method of dmp.player class that skips forwards 10 seconds the current track
+      return false;
+  }
+
 });
